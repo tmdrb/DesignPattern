@@ -1,8 +1,15 @@
 package CreatePattern;
 
+import ComposePattern.Adapter.Iter;
+import ComposePattern.Adapter.ListIterator;
 import CreatePattern.Builder.NormalBuilder;
 import CreatePattern.model.Maze;
 import CreatePattern.AbstractFactory.MazeFactory;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class RunMaze {
 
@@ -10,13 +17,37 @@ public class RunMaze {
 
 	public static void main( String[] args ){
 
-		MazeGame game = new MazeGame();
+//		MazeGame game = new MazeGame();
+//
+//		MazeFactory mazeFactory = new MazeFactory();
+//		NormalBuilder builder = new NormalBuilder();
+//
+//		Maze maze = game.createMaze( builder );
+//
+//		System.out.println("completed!!!");
 
-		MazeFactory mazeFactory = new MazeFactory();
-		NormalBuilder builder = new NormalBuilder();
+		List list = new ArrayList();
 
-		Maze maze = game.createMaze( builder );
+		list.add( 1 );
+		list.add( 2 );
+		list.add( 3 );
+		list.add( 4 );
 
-		System.out.println("completed!!!");
+		Iter listIterator = new ListIterator( list );
+
+
+		System.out.println( listIterator.hasNext() );
+		System.out.println( listIterator.next() );
+		System.out.println( listIterator.hasNext() );
+		System.out.println( listIterator.next() );
+		System.out.println( listIterator.hasNext() );
+		System.out.println( listIterator.next() );
+
+		System.out.println( listIterator.hasNext() );
+		System.out.println( listIterator.next() );
+		listIterator.remove();
+		System.out.println( listIterator.hasNext() );
+//		System.out.println( listIterator.next() );
+
 	}
 }
