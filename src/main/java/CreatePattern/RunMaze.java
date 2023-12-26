@@ -2,6 +2,7 @@ package CreatePattern;
 
 import ComposePattern.Adapter.Iter;
 import ComposePattern.Adapter.ListIterator;
+import ComposePattern.Bridge.*;
 import CreatePattern.Builder.NormalBuilder;
 import CreatePattern.model.Maze;
 import CreatePattern.AbstractFactory.MazeFactory;
@@ -33,21 +34,26 @@ public class RunMaze {
 		list.add( 3 );
 		list.add( 4 );
 
-		Iter listIterator = new ListIterator( list );
-
-
-		System.out.println( listIterator.hasNext() );
-		System.out.println( listIterator.next() );
-		System.out.println( listIterator.hasNext() );
-		System.out.println( listIterator.next() );
-		System.out.println( listIterator.hasNext() );
-		System.out.println( listIterator.next() );
-
-		System.out.println( listIterator.hasNext() );
-		System.out.println( listIterator.next() );
-		listIterator.remove();
-		System.out.println( listIterator.hasNext() );
+//		Iter listIterator = new ListIterator( list );
+//
+//
+//		System.out.println( listIterator.hasNext() );
+//		System.out.println( listIterator.next() );
+//		System.out.println( listIterator.hasNext() );
+//		System.out.println( listIterator.next() );
+//		System.out.println( listIterator.hasNext() );
+//		System.out.println( listIterator.next() );
+//
+//		System.out.println( listIterator.hasNext() );
+//		System.out.println( listIterator.next() );
+//		listIterator.remove();
+//		System.out.println( listIterator.hasNext() );
 //		System.out.println( listIterator.next() );
 
+		Unit animal = new AnimalUnit( new Animal() );
+		Unit person = new PersonUnit( new Person() );
+
+		animal.start();
+		person.start();
 	}
 }
